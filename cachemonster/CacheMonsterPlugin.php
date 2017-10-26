@@ -39,7 +39,7 @@ class CacheMonsterPlugin extends BasePlugin
 
     public function getDescription()
     {
-        return 'Clear and warm cache.';
+        return 'Fresh and warm cache.';
     }
 
     public function getDeveloperUrl()

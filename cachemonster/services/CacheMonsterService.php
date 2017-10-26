@@ -21,8 +21,8 @@ class CacheMonsterService extends BaseApplicationComponent
     public function callCacheWarmer()
     {
         echo 'Initialize the Cache warmer... ' . "\r\n";
-        $curl = curl_init();
-        curl_setopt($curl, CURLOPT_URL, 'https://y7kcom.lib.id/cachewarmer@0.0.2/:bg?url=' . craft()->getSiteUrl());
+        $curl = curl_init();        curl_setopt($curl, CURLOPT_URL, 'https://y7kcom.lib.id/cachewarmer@' . craft()->plugins->getPlugin('cacheMonster')->getCacheWarmerVersion() . '/:bg?url=' . craft()->getSiteUrl());
+
         curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
         curl_exec($curl);
     }
