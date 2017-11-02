@@ -12,9 +12,13 @@ class CacheMonsterService extends BaseApplicationComponent
 
     public function clearRuntimeFolders()
     {
+        // Are we sudo?
+        $sudo = (posix_getuid() == 0) ? 'sudo ' : '';
+
         foreach (["runtime/cache", "runtime/compiled_templates", "runtime/state"] as $folder) {
+            $cmd = $sudo . 'rm -rf '. CRAFT_STORAGE_PATH . $folder;
             echo 'Deleting storage folder: ' . $folder . "\r\n";
-            shell_exec('rm -rf ' . CRAFT_STORAGE_PATH . $folder);
+            exec($cmd);
         }
     }
 
