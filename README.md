@@ -35,16 +35,17 @@ After you have added this, you will need to do:
 
 ## Maintenance Overview
 
--Insert text here-
+### Cachewarming
 
-## Using Maintenance
+This plugin exposes two console commands:
 
--Insert text here-
+```
+php craft maintenance-module/cachewarmer/purge-and-warm
+php craft maintenance-module/cachewarmer/purge-cache
+```
 
 ## Maintenance Roadmap
 
 Some things to do, and ideas for potential features:
-
-* Release it
 
 Brought to you by [Y7K](y7k.com)
