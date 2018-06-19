@@ -1,0 +1,16 @@
+{
+    "name": "y7k\/maintenancemodule",
+    "description": "Craft 3 Module to run maintenance tasks",
+    "license": "Unlicense",
+    "version": "1.0.0",
+    "require": {
+        "php": ">=7.1.0",
+        "craftcms\/cms": "^3.0.0-RC1",
+        "guzzlehttp\/guzzle": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Y7K\\EnvironmentIndicatorModule\\": "src\/"
+        }
+    }
+}
