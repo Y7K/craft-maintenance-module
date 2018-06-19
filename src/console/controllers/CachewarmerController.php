@@ -48,7 +48,7 @@ class CachewarmerController extends Controller
     public function actionPurgeAndWarm()
     {
         $this
-            ->abortIfSystemIsOff()
+            // ->abortIfSystemIsOff()
             ->purgeRuntimeFolders()
             ->abortIfTemplateCachingIsDisabled()
             ->deleteAllTemplateCaches()
@@ -64,7 +64,7 @@ class CachewarmerController extends Controller
     public function actionPurgeCache()
     {
         $this
-            ->abortIfSystemIsOff()
+            // ->abortIfSystemIsOff()
             ->purgeRuntimeFolders()
             ->abortIfTemplateCachingIsDisabled()
             ->deleteAllTemplateCaches();
@@ -97,6 +97,7 @@ class CachewarmerController extends Controller
 
     private function abortIfSystemIsOff()
     {
+        // This seems to always return false. help.
         if (!Craft::$app->isSystemOn) {
             echo 'System is turned off. Abort.' . "\r\n";
             return Craft::$app->end();
