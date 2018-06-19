@@ -14,8 +14,8 @@ class CacheMonsterService extends BaseApplicationComponent
      */
     public function clearRuntimeFolders()
     {
-        foreach (["runtime/cache", "runtime/compiled_templates", "runtime/state"] as $folder) {
-            echo "Deleting storage folder: " . $folder . "\r\n";
+        foreach (['runtime/cache', 'runtime/compiled_templates', 'runtime/state'] as $folder) {
+            echo 'Deleting storage folder: ' . $folder . "\r\n";
             exec('rm -rf '. CRAFT_STORAGE_PATH . $folder);
         }
     }
@@ -25,9 +25,14 @@ class CacheMonsterService extends BaseApplicationComponent
      */
     public function callCacheWarmer()
     {
-        echo "Initialize the Cache warmer... " . "\r\n";
+        echo 'Initialize the Cache warmer... ' . "\r\n";
+        $domain = rtrim(craft()->getSiteUrl(), '/');
+        $url = 'https://maintenance.y7k.tools/api/warm-cache';
+
         $curl = curl_init();
-        curl_setopt($curl, CURLOPT_URL, 'https://y7kcom.lib.id/cachewarmer/:bg?url=' . craft()->getSiteUrl());
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_POST, 1);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, "domain={$domain}");
         curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
         curl_exec($curl);
     }

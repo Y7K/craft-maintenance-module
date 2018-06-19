@@ -5,7 +5,6 @@ namespace Craft;
 class CacheMonsterCommand extends BaseCommand
 {
 
-
     /**
      * Delete all template caches and make a call to the Cache Warmer
      */
@@ -55,7 +54,7 @@ class CacheMonsterCommand extends BaseCommand
     {
         $hostNames = explode(".", parse_url(craft()->getSiteUrl(), PHP_URL_HOST));
         $appTld = end($hostNames);
-        if (craft()->config->get('appEnv') === 'local' || $appTld === 'dev' || $appTld === 'localhost') {
+        if ($appTld === 'test' || $appTld === 'localhost' || craft()->config->get('appEnv') === 'local') {
             echo 'We are on localhost. Abort.';
             return craft()->end();
         }
