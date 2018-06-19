@@ -10,7 +10,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Y7K\\EnvironmentIndicatorModule\\": "src\/"
+            "Y7K\\MaintenanceModule\\": "src\/"
         }
     }
 }
