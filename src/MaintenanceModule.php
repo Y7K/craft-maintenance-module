@@ -54,7 +54,7 @@ class MaintenanceModule extends Module
      */
     public function __construct($id, $parent = null, array $config = [])
     {
-        Craft::setAlias('@Y7K/MaintenanceModule', $this->getBasePath());
+        Craft::setAlias('Y7K/MaintenanceModule', $this->getBasePath());
 
         // Set this as the global instance of this module class
         static::setInstance($this);
@@ -80,7 +80,7 @@ class MaintenanceModule extends Module
 
         // Add in our console commands
         if (Craft::$app instanceof ConsoleApplication) {
-            $this->controllerNamespace = '\Y7K\MaintenanceModule\console\controllers';
+            $this->controllerNamespace = 'Y7K\MaintenanceModule\console\controllers';
         }
     }
 
