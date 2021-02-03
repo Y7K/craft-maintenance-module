@@ -15,10 +15,10 @@ First, you'll need to add the contents of the `app.php` file to your `config/app
 return [
     'modules' => [
         'maintenance-module' => [
-            'class' => \Y7K\MaintenanceModule\MaintenanceModule::class,
+            'class' => \y7k\maintenancemodule\MaintenanceModule::class,
             'components' => [
                 'cachewarmer' => [
-                    'class' => 'Y7K\MaintenanceModule\services\Cachewarmer',
+                    'class' => 'y7k\maintenancemodule\services\Cachewarmer',
                 ],
             ],
         ],
@@ -30,7 +30,7 @@ return [
 After you have added this, you will need to do:
 
     composer dump-autoload
- 
+
  …from the project’s root directory, to rebuild the Composer autoload map. This will happen automatically any time you do a `composer install` or `composer update` as well.
 
 ## Maintenance Overview

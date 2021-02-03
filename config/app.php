@@ -15,10 +15,10 @@
 return [
     'modules' => [
         'maintenance-module' => [
-            'class' => \Y7K\MaintenanceModule\MaintenanceModule::class,
+            'class' => \y7k\maintenancemodule\MaintenanceModule::class,
             'components' => [
                 'cachewarmer' => [
-                    'class' => 'Y7K\MaintenanceModule\services\Cachewarmer',
+                    'class' => 'y7k\maintenancemodule\services\Cachewarmer',
                 ],
             ],
         ],

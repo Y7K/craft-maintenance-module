@@ -8,9 +8,9 @@
  * @copyright Copyright (c) 2018 Y7K
  */
 
-namespace Y7K\MaintenanceModule\console\controllers;
+namespace y7k\maintenancemodule\console\controllers;
 
-use Y7K\MaintenanceModule\MaintenanceModule;
+use y7k\maintenancemodule\MaintenanceModule;
 
 use Craft;
 use yii\console\Controller;

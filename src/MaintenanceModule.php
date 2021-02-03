@@ -8,9 +8,9 @@
  * @copyright Copyright (c) 2018 Y7K
  */
 
-namespace Y7K\MaintenanceModule;
+namespace y7k\maintenancemodule;
 
-use Y7K\MaintenanceModule\services\Cachewarmer as CachewarmerService;
+use y7k\maintenancemodule\services\Cachewarmer as CachewarmerService;
 
 use Craft;
 use craft\console\Application as ConsoleApplication;
@@ -54,7 +54,7 @@ class MaintenanceModule extends Module
      */
     public function __construct($id, $parent = null, array $config = [])
     {
-        Craft::setAlias('Y7K/MaintenanceModule', $this->getBasePath());
+        Craft::setAlias('y7k/maintenancemodule', $this->getBasePath());
 
         // Set this as the global instance of this module class
         static::setInstance($this);
@@ -80,7 +80,7 @@ class MaintenanceModule extends Module
 
         // Add in our console commands
         if (Craft::$app instanceof ConsoleApplication) {
-            $this->controllerNamespace = 'Y7K\MaintenanceModule\console\controllers';
+            $this->controllerNamespace = 'y7k\maintenancemodule\console\controllers';
         }
     }
 

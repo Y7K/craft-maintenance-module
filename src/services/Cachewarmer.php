@@ -8,13 +8,13 @@
  * @copyright Copyright (c) 2018 Y7K
  */
 
-namespace Y7K\MaintenanceModule\services;
+namespace y7k\maintenancemodule\services;
 
 use craft\helpers\FileHelper;
 use craft\helpers\UrlHelper;
 use GuzzleHttp\Client;
 use GuzzleHttp\RequestOptions;
-use Y7K\MaintenanceModule\MaintenanceModule;
+use y7k\maintenancemodule\MaintenanceModule;
 
 use Craft;
 use craft\base\Component;
